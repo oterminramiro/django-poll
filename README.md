@@ -4,13 +4,18 @@ Simple poll api usign Django Rest framework
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 - Generate virtualenv: ``virtualenv env``
 - Activate it: ``source env/bin/activate``
 - Install requirements: ``pip install -r requirements.txt``
 - Run migrations: ``python manage.py migrate``
 - Start the app: ``python manage.py runserver``
+
+### Make authenticated request
+- Generate user at: ``/polls/customer_create``
+- Get your token at: ``/polls/api-token-auth/``
+- Send your request with the next header: ``Authorization: Token YOUR_TOKEN``
 
 ## Built With
 
