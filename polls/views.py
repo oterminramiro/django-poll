@@ -32,6 +32,16 @@ class PollList(generics.ListAPIView):
 		except Exception as e:
 			return returnResponse( request, str(e) , False , 500 )
 
+# GET A SINGLE POLL
+class PollExist(generics.RetrieveAPIView):
+	def get(self,request,slug):
+		try:
+			queryset = Poll.objects.filter(slug = slug)
+			serializer = PollSerializer(queryset, many=True)
+			return returnResponse( request, serializer.data , True , 200 )
+		except Exception as e:
+			return returnResponse( request, str(e) , False , 500)
+
 # CREATE POLL
 class PollCreate(APIView):
 	def post(self,request):

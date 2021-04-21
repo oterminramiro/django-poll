@@ -8,6 +8,6 @@ urlpatterns = [
 	path("list/", views.PollList.as_view(), name="list"),
 	path("create/", views.PollCreate.as_view(), name="create"),
 	path("vote/", views.ChoiceCreate.as_view(), name="vote"),
-	
+	path("poll/<slug:slug>/", views.PollExist.as_view(), name="poll"),
 	path("customer_create/", views.CustomerCreate.as_view(), name="customer_create"),
 ]
